@@ -1,23 +1,34 @@
+variable "environment" {
+  type        = string
+  description = "Ambiente de despliegue (ej: dev, prod)"
+}
+
 variable "vpc_cidr" {
   type        = string
-  default     = "10.0.0.0/16"
-  description = "Bloque CIDR para la VPC"
+  description = "Bloque CIDR principal para la VPC"
 }
 
 variable "public_subnet_1_cidr" {
   type        = string
-  default     = "10.0.1.0/24"
-  description = "CIDR para la primera subnet publica"
+  description = "Bloque CIDR para la primera subred publica (AZ 1a)"
 }
 
 variable "public_subnet_2_cidr" {
   type        = string
-  default     = "10.0.3.0/24"
-  description = "CIDR para la segunda subnet publica requerida por el ALB"
+  description = "Bloque CIDR para la segunda subred publica (AZ 1b) requerida por el ALB"
 }
 
 variable "private_subnet_cidr" {
   type        = string
-  default     = "10.0.2.0/24"
-  description = "CIDR para la subnet privada"
+  description = "Bloque CIDR para la subred privada"
+}
+
+variable "az_1" {
+  type        = string
+  description = "Primera Zona de Disponibilidad"
+}
+
+variable "az_2" {
+  type        = string
+  description = "Segunda Zona de Disponibilidad"
 }
